@@ -1,4 +1,4 @@
-name: Pipeline teste
+name: Pipeline test
 
 on:
     push:
@@ -11,4 +11,4 @@ jobs:
 
         steps:
           - name: Checkout index
-          run: test -f index.html
+            run: test -f index.html
