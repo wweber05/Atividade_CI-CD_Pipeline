@@ -10,5 +10,14 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-          - name: Checkout index
-            run: test -f index.html
+          - name: Baixar o código do repositório
+            uses: actions/checkout@v3
+
+          - name: Verificar se existe pelo menos um HTML
+            run: |
+              if find . -name "*.html" | grep -q .; then
+               echo "Arquivos HTML encontrados com sucesso."
+              else 
+               echo "Nenhum arquivo Html encontrado."
+               exit 1
+              fi
